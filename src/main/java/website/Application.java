@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Created by Kyung Song on 6/28/2017.
+ * Resource used:
+ *      1. Spring Framework tutorial
+ *      2. http://www.nakov.com/blog/2016/08/05/creating-a-blog-system-with-spring-mvc-thymeleaf-jpa-and-mysql/
  */
 
 @SpringBootApplication
