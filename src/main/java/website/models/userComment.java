@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by Kyung on 7/3/2017.
  */
 public class UserComment {
-    private Date date = new Date;
+    private Date date = new Date();
     private String commenterId;
     private String content;
 
