@@ -40,7 +40,7 @@ def generate_url(query, mode, page_num = ""):
     word = query.replace(query, parse.quote(query))
     url = "https://search.naver.com/search.naver?where=post&query="+word+ \
             "&ie=utf8&st=sim&sm=tab_opt&date_from=20030520&date_to=20170724&date_option="+mode+ \
-            "&srchby=all&dup_remove=1&post_blogurl=&post_blogurl_without=&nso=so%3Ar%2Ca%3Aall%2Cp%3A1d&mson=0"
+            "&srchby=title&dup_remove=1&post_blogurl=&post_blogurl_without=&nso=so%3Ar%2Ca%3Aall%2Cp%3A1d&mson=0"
 
     if page_num:
         url += "&start=" + page_num
@@ -77,7 +77,6 @@ def naver_blog_scraper(copy_list, driver):
         contents = ''
         contents_holder = soup.find_all('div', class_='se_component_wrap sect_dsc __se_component_area')
         contents_holder += soup.find_all('div', class_='post_ct ')
-        #contents_holder += soup.find_all('div', class_='se_textView')
         contents_holder += soup.find_all('div', class_='post_ct   se3_view ')
         if contents_holder:
             for paragraph_soup in contents_holder:
@@ -89,7 +88,7 @@ def naver_blog_scraper(copy_list, driver):
                     if text_soup.text:
                         temp_line = ' '.join(text_soup.text.split())
                         if temp_line not in contents:
-                            contents += ' ' + temp_line
+                            contents += ' ' + temp_line + ' '
     except:
         print("Loading the following page has failed : " + current_url)
 
@@ -140,53 +139,3 @@ def run_scraper(query_list, mode, driver):
     post_list = content_scraper(post_list, driver)
 
     return buzz_per_query, post_list
-
-def main():
-    """
-    Read in queries and searches them
-    """
-
-    path = os.getcwd() + "\\phantomjs\\bin\\phantomjs"
-    driver = webdriver.PhantomJS(path)
-
-
-    buzz_per_query, post_list = run_scraper(["리니지m", "비밀의 숲"], "2", driver)
-    print(buzz_per_query)
-    """
-    for query in post_list:
-        for post in query:
-            if(len(post) > 2):
-                print(post[0],post[1])
-                print(post[2][1:50])
-    #print(post_list[0][0])
-    """
-
-
-    dict_list = []
-    for query in post_list:
-        print("sth")
-        text = ""
-        for post in query:
-            if(len(post) > 2):
-                text += post[2]
-        nouns = Komoran().nouns(text)
-        count_dict = defaultdict(int)
-
-        for noun in nouns:
-            count_dict[noun] += 1
-        dict_list.append(count_dict)
-
-    for i in range(len(dict_list)):
-        for item in list(dict_list[i]):
-            if dict_list[i][item] < 10:
-                del dict_list[i][item]
-
-    print(len(dict_list))
-    for i in dict_list:
-        print(i)
-
-
-    #test Ended
-
-    driver.quit()
-main()

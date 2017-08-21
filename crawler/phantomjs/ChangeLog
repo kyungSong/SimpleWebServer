@@ -350,7 +350,7 @@ Please see also http://phantomjs.org/releases.html.
 
     Fixed building with Cygwin and Qt 4.5 (John Dalton).
 
-    Added a new example: driver for QUnit tests (Łukasz Korecki).
+    Added a new example: driver for QUnit tests (?ukasz Korecki).
 
     Fixed issue #20: problem with JPG transparent color (Alessandro Portale).
 

@@ -21,11 +21,9 @@ import java.util.Map;
 public class WebController {
 
     @RequestMapping("/trending")
-    public String trending(@RequestParam(value="name", required = false, defaultValue = "World") String name, Model model)
+    public String trending()
     {
-        model.addAttribute("name", name);
         return "trending";
-
     }
 
     @RequestMapping("/")
@@ -34,18 +32,60 @@ public class WebController {
         return "index";
     }
 
+    @RequestMapping("/text_analysis")
+    public String text_analysis()
+    {
+        return "text_analysis";
+    }
+
     @RequestMapping("/google_trends")
     @ResponseBody
     public String googleTrends(@RequestParam(defaultValue = "커피", required = false, value="searchTerm") String searchTerm,
                                @RequestParam(defaultValue = "2000-01-01", required = false, value="startDate") String startDate,
                                @RequestParam(defaultValue = "2017-01-01", required = false, value="endDate") String endDate)
     {
-        System.out.println(searchTerm);
-        System.out.println(startDate);
-        System.out.println(endDate);
         Runtime rt = Runtime.getRuntime();
         String command = "node e:\\development\\nodejs\\gt_related_queries.js " + searchTerm + " " + startDate + " " + endDate;
-        System.out.println(command);
+        Process proc = null;
+        try
+        {
+            proc = rt.exec(command);
+        }
+        catch(IOException e)
+        {
+            System.err.println("Caught IOException: " + e.getMessage());
+        }
+
+
+        BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+        BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+
+        //read the output
+        String s = "";
+        String temp = null;
+
+        try {
+            while ((temp = stdInput.readLine()) != null) {
+                s += temp;
+            }
+            System.out.println("Printing out Error Messages (if any): \n");
+            while ((temp = stdError.readLine()) != null) {
+                System.out.println(temp);
+            }
+        }catch(IOException e){
+            System.err.println("Caught IOException: " + e.getMessage());
+        }
+        return s;
+    }
+
+    @RequestMapping("/get_text_analysis")
+    @ResponseBody
+    public String text_analysis(@RequestParam(defaultValue = "리니지m", required = false, value="gameName") String gameName,
+                                @RequestParam(defaultValue = "2017-01-01", required = false, value="startDate") String startDate,
+                                @RequestParam(defaultValue = "2017-01-01", required = false, value="endDate") String endDate)
+    {
+        Runtime rt = Runtime.getRuntime();
+        String command = "python e:\\development\\Website\\connToDB\\getData.py " + gameName + " " + startDate + " " + endDate;
         Process proc = null;
         try
         {
