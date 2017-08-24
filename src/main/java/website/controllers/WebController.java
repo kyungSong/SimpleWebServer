@@ -45,7 +45,7 @@ public class WebController {
                                @RequestParam(defaultValue = "2017-01-01", required = false, value="endDate") String endDate)
     {
         Runtime rt = Runtime.getRuntime();
-        String command = "node e:\\development\\nodejs\\gt_related_queries.js " + searchTerm + " " + startDate + " " + endDate;
+        String command = "node c:\\Users\\Administrator\\Desktop\\server\\tools\\nodejs\\gt_related_queries.js " + searchTerm + " " + startDate + " " + endDate;
         Process proc = null;
         try
         {
@@ -85,7 +85,7 @@ public class WebController {
                                 @RequestParam(defaultValue = "2017-01-01", required = false, value="endDate") String endDate)
     {
         Runtime rt = Runtime.getRuntime();
-        String command = "python e:\\development\\Website\\connToDB\\getData.py " + gameName + " " + startDate + " " + endDate;
+        String command = "python c:\\Users\\Administrator\\Desktop\\server\\tools\\connToDB\\getData.py " + gameName + " " + startDate + " " + endDate;
         Process proc = null;
         try
         {
