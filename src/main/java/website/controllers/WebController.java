@@ -38,6 +38,18 @@ public class WebController {
         return "text_analysis";
     }
 
+    @RequestMapping("/about")
+    public String about()
+    {
+        return "about";
+    }
+
+    @RequestMapping("/contact")
+    public String contact()
+    {
+        return "contact";
+    }
+
     @RequestMapping("/google_trends")
     @ResponseBody
     public String googleTrends(@RequestParam(defaultValue = "커피", required = false, value="searchTerm") String searchTerm,

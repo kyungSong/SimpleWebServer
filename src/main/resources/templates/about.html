@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OtD: 페이지 설명</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+}
+
+.main_en {
+    padding: 16px;
+    margin-top: 60px;
+    }
+
+.tab{margin-left: 40px;}
+
+h1 {
+    font-size: 250%
+    }
+h2 {
+    font-size: 200%
+    }
+
+</style>
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/trending.html">Trending Words</a>
+    <a href="/text_analysis.html">Text Analysis</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
+</div>
+    <div class="main">
+        <p>
+            <h1>텍스트 분석:</h1>
+        </p>
+        <p>
+        텍스트 분석은 다음과 같이 이루어집니다. <br></br>
+            <span>
+                &lt; 서버측 &gt; <br></br><br></br>
+                1. 매일 정해진 시간에 정해진 게임에 대한 데이터 수집.<br></br>
+                2. 텍스트 상에서 사용된 명사를 추출하여 각 명사가 언급된 횟수 저장.<br></br><br></br>
+                &lt; 클라이언트(브라우저) 측 &gt; <br></br><br></br>
+                1. 게임 이름과 기간을 정한 뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br></br>
+                2. 받은 데이터중 상위 25개의 단어를 표 형식으로 만들어 브라우저 상에 게시. <br></br><br></br>
+            </span>
+            데이터 채집은 매일 1회 이루어 집니다. <br></br>
+            현재 채집되고 있는 게임: 리니지m, 소녀전선. <br></br>
+            계속 업데이트 예정.
+        </p>
+        <p>
+            <h1>연관 검색어:</h1>
+        </p>
+        <p>
+            연관 검색어는 다음과 같이 이루어집니다. <br></br><br></br>
+            <span>
+                1. 검색어와 기간을 정한뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br></br>
+                2. 입력된 기간 내에, 입력된 검색어와 연관있었던 검색어와, 역시 해당 기간내에 해당 검색어와 연관되어 가장 많이 검색 빈도율이 올라간 검색어를 표 형식으로 만들어 브라우저 상에 게시. <br></br><br></br>
+            </span>
+            연관 검색어 검색은 구글 트렌드를 사용하고 있으며, 지역은 한국으로 제한되어 있습니다. 기간이 길면 로딩이 길어질 수 있습니다. <br></br>
+            계속 업데이트 예정.
+        </p>
+    </div>
+
+    <div class="main_en">
+        <p>
+        <h1>Text Analysis:</h1>
+        </p>
+        <p>
+            Here's how "Text Analysis" works. <br></br>
+            <span>
+                    &lt; Server side &gt; <br></br><br></br>
+                    1. Specified game data is collected at a designated time.<br></br>
+                    2. Nouns are extracted from the collected data, and appearance of each noun is recorded.<br></br><br></br>
+                    &lt; Client(Browser) side &gt; <br></br><br></br>
+                    1. Request data from DB using selected game name and time period. <br></br>
+                    2. Show top 25 most frequently occurring nouns as a bar graph. <br></br><br></br>
+                </span>
+            Data is collected once every day. <br></br>
+            Currently collecting data of: Lineage M, Girls' Frontline. <br></br>
+            To be updated with new features. <br></br>
+            Currently only supporting Korean text analysis.
+        </p>
+        <p>
+        <h1>Trending Words:</h1>
+        </p>
+        <p>
+            Here's how "Trending Words" work. <br></br><br></br>
+            <span>
+                    1. Request data to the server using search word and time period inputted. <br></br>
+                    2. Show bar graphs of two data (related search terms and terms with increased search frequency) returned. <br></br><br></br>
+                </span>
+            "Trending Words" uses google trends, location is limited to Korea at the moment. Loading data may take time. <br></br>
+            To be updated with new features.
+        </p>
+    </div>
+</body>
+</html>

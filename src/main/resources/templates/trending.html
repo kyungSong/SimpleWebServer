@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>연관 검색어/실시간 검색어</title>
+    <title>OtD: 연관 검색어</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
     <style>
@@ -64,8 +64,8 @@ body {margin:0;}
     <a href="/">Home</a>
     <a href="/trending.html">Trending Words</a>
     <a href="/text_analysis.html">Text Analysis</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
 </div>
 
 <div class="main">
@@ -246,8 +246,13 @@ body {margin:0;}
             mm = '0' + mm;
         }
         today = yyyy + '-' + mm + '-' + dd;
+        lastYear = yyyy-1 + '-' + mm + '-' + dd;
+
         document.getElementById("startDate").setAttribute("max", today);
+        document.getElementById("startDate").setAttribute("value", lastYear);
+
         document.getElementById("endDate").setAttribute("max", today);
+        document.getElementById("endDate").setAttribute("value", today);
     }
 
     //format parameter values that is required by google trends API.

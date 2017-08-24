@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Text Analysis</title>
+    <title>OtD: 텍스트 분석</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
     <style>
@@ -51,8 +51,8 @@ html, body, #container {
     <a href="/">Home</a>
     <a href="/trending.html">Trending Words</a>
     <a href="/text_analysis.html">Text Analysis</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/about.html">About</a>
 </div>
 
 <div class="main">
@@ -118,7 +118,7 @@ html, body, #container {
 
             var ctx = document.getElementById("common_nouns").getContext('2d');
             ctx.canvas.width = window.innerWidth;
-            ctx.canvas.height = window.innerHeight - 100;
+            ctx.canvas.height = window.innerHeight - 200;
 
             var chart = new Chart(ctx, {
             type: 'bar',
@@ -164,6 +164,7 @@ html, body, #container {
             today = yyyy + '-' + mm + '-' + dd;
             document.getElementById("startDate").setAttribute("max", today);
             document.getElementById("endDate").setAttribute("max", today);
+            document.getElementById("endDate").setAttribute("value", today);
         }
 
         //format parameter values that is required by the script calling DB.
