@@ -54,7 +54,6 @@
             var red = 255;
             var blue = 0;
             var offset = ~~(255/num_data_point);
-            console.log('rgba(' + red.toString() + ',0,' + blue.toString() + ', 0.2)');
             for (var i = 0; i < num_data_point; i++)
             {
                 background.push('rgba(' + red.toString() + ',0,' + blue.toString() + ',0.5)');
@@ -109,6 +108,8 @@
             }
             today = yyyy + '-' + mm + '-' + dd;
             document.getElementById("startDate").setAttribute("max", today);
+            document.getElementById("startDate").setAttribute("value", today);
+
             document.getElementById("endDate").setAttribute("max", today);
             document.getElementById("endDate").setAttribute("value", today);
         }

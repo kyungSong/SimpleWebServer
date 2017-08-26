@@ -108,6 +108,8 @@
             }
             today = yyyy + '-' + mm + '-' + dd;
             document.getElementById("startDate").setAttribute("max", today);
+            document.getElementById("startDate").setAttribute("value", today);
+
             document.getElementById("endDate").setAttribute("max", today);
             document.getElementById("endDate").setAttribute("value", today);
         }
