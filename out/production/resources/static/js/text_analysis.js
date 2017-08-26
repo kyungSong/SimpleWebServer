@@ -48,14 +48,31 @@
             var ctx = document.getElementById("common_nouns").getContext('2d');
             ctx.canvas.width = window.innerWidth;
             ctx.canvas.height = window.innerHeight - 200;
+            var background = [];
+            var border = [];
+            var num_data_point = data[1].length;
+            var red = 255;
+            var blue = 0;
+            var offset = ~~(255/num_data_point);
+            console.log('rgba(' + red.toString() + ',0,' + blue.toString() + ', 0.2)');
+            for (var i = 0; i < num_data_point; i++)
+            {
+                background.push('rgba(' + red.toString() + ',0,' + blue.toString() + ',0.5)');
+                border.push('rgba(' + red.toString() + ',0,' + blue.toString() + ',1)');
+                red -= offset;
+                blue += offset;
 
+            }
             var chart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: data[0],
                 datasets: [{
                     label: '횟수(Count)',
-                    data: data[1]
+                    data: data[1],
+                    backgroundColor: background,
+                    borderColor: border,
+                    borderWidth: 1
                     }]
             },
             options: {

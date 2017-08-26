@@ -77,13 +77,31 @@
         ctxRising.canvas.width = window.innerWidth;
         ctxRising.canvas.height = window.innerHeight - 100;
 
+        var background = [];
+        var border = [];
+        var num_data_point = related[1].length;
+        var red = 255;
+        var blue = 0;
+        var offset = ~~(255/num_data_point);
+        for (var i = 0; i < num_data_point; i++)
+        {
+            background.push('rgba(' + red.toString() + ',0,' + blue.toString() + ',0.5)');
+            border.push('rgba(' + red.toString() + ',0,' + blue.toString() + ',1)');
+            red -= offset;
+            blue += offset;
+
+        }
+
         var relatedChart = new Chart(ctxRelated, {
             type: 'bar',
             data: {
                 labels: related[0],
                 datasets: [{
-                    label: 'Values',
-                    data: related[1]
+                    label: '100 = 최고 인기 검색어 (100 = Most popular)',
+                    data: related[1],
+                    backgroundColor: background,
+                    borderColor: border,
+                    borderWidth: 1
                     }]
             },
             options: {
@@ -106,8 +124,11 @@
             data: {
                 labels: rising[0],
                 datasets: [{
-                    label: 'Percent Increase',
-                    data: rising[1]
+                    label: '% 증가량(Percent Increase)',
+                    data: rising[1],
+                    backgroundColor: background,
+                    borderColor: border,
+                    borderWidth: 1
                     }]
             },
             options: {
