@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>OtD: 텍스트 분석</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="..\js\text_analysis.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
+<style>
+    body {
+      /*padding-top: 20px;*/
+      padding-bottom: 20px;
+    }
+
+    .navbar {
+      margin-bottom: 20px;
+    }
+
+    #searchParam{
+        padding-top: 50px;
+    }
+
+    .main {
+      padding: 16px;
+      margin-top: 30px;
+    }
+
+    html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+    #common_nouns {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+</style>
+</head>
+<body onload="dateSetter()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-center" id="nav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">OtD <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/kr/about.html">페이지 설명</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/kr/contact.html">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">데이터</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown">
+                    <a class="dropdown-item" href="/kr/text_analysis.html">텍스트 분석</a>
+                    <a class="dropdown-item" href="/kr/trending.html">연관 검색어</a>
+                    <a class="dropdown-item disabled" href="#">개발중</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="/en/text_analysis" role="button">En</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <form id="searchParam" onsubmit="return getTextAnalysis();">
+        게임 이름: <select name="gameName" id="gameName">
+            <option value="리니지m">리니지m</option>
+            <option value="소녀전선">소녀전선</option>
+        </select><br />
+        기간: <input type="date" name="startDate" id="startDate" value="" min="2017-08-20" max="2000-13-13"/> 부터
+        <input type="date" name="endDate" id="endDate" value="" min="2000-01-02" max="2000-13-13"/>까지<br />
+        <Input type="submit" value="검색" />
+    </form>
+
+    <div id="container">
+        <canvas id = "common_nouns"></canvas>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

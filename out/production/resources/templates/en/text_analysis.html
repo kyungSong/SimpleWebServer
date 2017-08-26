@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>OtD: Text Analysis</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
+    <script type="text/javascript" src="..\js\text_analysis.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
+<style>
+    body {
+      /*padding-top: 20px;*/
+      padding-bottom: 20px;
+    }
+
+    .navbar {
+      margin-bottom: 20px;
+    }
+
+    #searchParam{
+        padding-top: 50px;
+    }
+
+    .main {
+      padding: 16px;
+      margin-top: 30px;
+    }
+
+    html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        padding: 0;
+    }
+
+    #common_nouns {
+        width: 100%;
+        height: 100%;
+        float: left;
+    }
+</style>
+</head>
+<body onload="dateSetter()">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="nav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/en">OtD <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/en/about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/en/contact.html">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The Works</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown">
+                    <a class="dropdown-item" href="/en/text_analysis.html">Text Analysis</a>
+                    <a class="dropdown-item" href="/en/trending.html">Trending Words</a>
+                    <a class="dropdown-item disabled" href="#">In Development...</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="/kr/text_analysis" role="button">한국어</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <form id="searchParam" onsubmit="return getTextAnalysis();">
+        Game Name: <select name="gameName" id="gameName">
+            <option value="리니지m">Lineage M</option>
+            <option value="소녀전선">Girls' Front lines</option>
+        </select><br />
+        From <input type="date" name="startDate" id="startDate" value="" min="2017-08-20" max="2000-13-13"/> to
+        <input type="date" name="endDate" id="endDate" value="" min="2000-01-02" max="2000-13-13"/><br />
+        <Input type="submit" value="Submit" />
+    </form>
+
+    <div id="container">
+        <canvas id = "common_nouns"></canvas>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
             startDate : document.getElementById("searchParam").elements[1].value,
             endDate : document.getElementById("searchParam").elements[2].value
         }
-        var url = "google_trends" + formatParams(params);
+        var url = "..\\google_trends" + formatParams(params);
         var EorK = isEnglish(document.getElementById("searchParam").elements[0].value);
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {

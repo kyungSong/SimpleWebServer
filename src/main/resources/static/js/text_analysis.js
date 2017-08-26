@@ -7,7 +7,7 @@
                 startDate : document.getElementById("searchParam").elements[1].value,
                 endDate : document.getElementById("searchParam").elements[2].value
             }
-            var url = "get_text_analysis" + formatParams(params);
+            var url = "..\\get_text_analysis" + formatParams(params);
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {

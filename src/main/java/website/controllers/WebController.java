@@ -20,34 +20,64 @@ import java.util.Map;
 @Controller
 public class WebController {
 
-    @RequestMapping("/trending")
-    public String trending()
+    @RequestMapping("/kr/trending")
+    public String trending_kr()
     {
-        return "trending";
+        return "kr/trending";
+    }
+
+    @RequestMapping("/en/trending")
+    public String trending_en()
+    {
+        return "en/trending";
     }
 
     @RequestMapping("/")
-    public String index()
+    public String index_kr()
     {
-        return "index";
+        return "kr/index";
     }
 
-    @RequestMapping("/text_analysis")
-    public String text_analysis()
+    @RequestMapping("/en")
+    public String index_en()
     {
-        return "text_analysis";
+        return "en/index";
     }
 
-    @RequestMapping("/about")
-    public String about()
+    @RequestMapping("/kr/text_analysis")
+    public String text_analysis_kr()
     {
-        return "about";
+        return "kr/text_analysis";
     }
 
-    @RequestMapping("/contact")
-    public String contact()
+    @RequestMapping("/en/text_analysis")
+    public String text_analysis_en()
     {
-        return "contact";
+        return "en/text_analysis";
+    }
+
+    @RequestMapping("/kr/about")
+    public String about_kr()
+    {
+        return "kr/about";
+    }
+
+    @RequestMapping("/en/about")
+    public String about_en()
+    {
+        return "en/about";
+    }
+
+    @RequestMapping("/kr/contact")
+    public String contact_kr()
+    {
+        return "kr/contact";
+    }
+
+    @RequestMapping("/en/contact")
+    public String contact_en()
+    {
+        return "en/contact";
     }
 
     @RequestMapping("/google_trends")
