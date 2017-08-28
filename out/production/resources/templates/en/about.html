@@ -13,27 +13,7 @@
     <link rel="stylesheet" href="..\assets\theme\css\style.css" />
     <link rel="stylesheet" href="..\assets\mobirise\css\mbr-additional.css" type="text/css" />
     <style>
-        body {
-          /*padding-top: 20px;*/
-          padding-bottom: 20px;
-        }
 
-        .navbar {
-          margin-bottom: 20px;
-        }
-        .main {
-          padding: 16px;
-          margin-top: 30px;
-        }
-
-        .tab{margin-left: 40px;}
-
-        h1 {
-            font-size: 250%
-            }
-        h2 {
-            font-size: 200%
-            }
     </style>
 </head>
 <body>
@@ -85,7 +65,7 @@
     </nav>
 </section>
 
-<section class="cid-qtsbe4jbMt mbr-fullscreen mbr-parallax-background" id="header2-e" data-rv-view="14">
+<section class="cid-qtsbe4jbMt mbr-fullscreen mbr-parallax-background" id="header2-e" data-rv-view="85">
 
 
 
@@ -93,20 +73,16 @@
 
     <div class="container align-center">
         <div class="row justify-content-md-center">
-            <div class="radio-group" data-toggle="buttons">
-                <label class="btn btn-md btn-secondary display-4 active" onclick="showServer();">
-                    <input type="radio" id="server-btn" autocomplete="off" checked="checked"/>
-                    Server
-                </label>
-                <label class="btn btn-md btn-secondary display-4" onclick="showClient();">
-                    <input type="radio" id="client-btn" autocomplete="off"/>
-                    Client
-                </label>
-            </div>
             <div class="mbr-white col-md-10">
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1-outline">
                     Text Analysis
                 </h1>
+
+                <div class="radio-group justify-content-md-center" data-toggle="buttons">
+                    <a class="btn btn-md btn-secondary display-4" onclick="showServer();">Server</a>
+                    <a class="btn btn-md btn-secondary display-4" onclick="showClient();">Client</a>
+                </div>
+
                 <div id="server-div" class="target-divs">
                     <p class="mbr-text pb-3 mbr-fonts-style display-5-outline">
                         1. Postings about specified games are collected.<br />
@@ -134,7 +110,7 @@
         </div>
     </div>
 </section>
-<section class="cid-qtsc5wJXJu mbr-fullscreen mbr-parallax-background" id="header3-e" data-rv-view="14">
+<section class="cid-qtsc5wJXJu mbr-fullscreen mbr-parallax-background" id="header3-e" data-rv-view="85">
 
 
 
@@ -146,7 +122,7 @@
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1-outline">
                     Trending Words
                 </h1>
-                <div id="server-div" class="target-divs">
+                <div id="trending-words">
                     <p class="mbr-text pb-3 mbr-fonts-style display-5-outline">
                         <span>
                             1. Request data to the server using search word and time frame inputted. <br />
