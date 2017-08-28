@@ -14,11 +14,6 @@
     <link rel="stylesheet" href="..\assets\theme\css\style.css" />
     <link rel="stylesheet" href="..\assets\mobirise\css\mbr-additional.css" type="text/css" />
 <style>
-    body {
-      /*padding-top: 20px;*/
-      padding-bottom: 20px;
-    }
-
     .tab{margin-left: 40px;}
 
     h1 {
@@ -85,15 +80,9 @@
 
     <div class="container align-center">
         <div class="row justify-content-md-center">
-            <div class="radio-group" data-toggle="buttons">
-                <label class="btn btn-md btn-secondary display-4 active" onclick="showServer();">
-                    <input type="radio" id="server-btn" autocomplete="off" checked=""/>
-                    서버
-                </label>
-                <label class="btn btn-md btn-secondary display-4" onclick="showClient();">
-                    <input type="radio" id="client-btn" autocomplete="off"/>
-                    클라이언트
-                </label>
+            <div class="radio-group justify-content-md-center" data-toggle="buttons">
+                <a class="btn btn-md btn-secondary display-4" onclick="showServer();">서버</a>
+                <a class="btn btn-md btn-secondary display-4" onclick="showClient();">클라이언트</a>
             </div>
             <div class="mbr-white col-md-10">
                 <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1-outline">
