@@ -11,8 +11,8 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("container").innerHTML = '&nbsp;';
-                    document.getElementById("container").innerHTML = '<canvas id = "common_nouns"></canvas>';
+                    document.getElementById("graph_container").innerHTML = '&nbsp;';
+                    document.getElementById("graph_container").innerHTML = '<canvas id = "common_nouns"></canvas><div id="clear"></div>';
                     formatDataForChart(this.responseText);
                 }
             };

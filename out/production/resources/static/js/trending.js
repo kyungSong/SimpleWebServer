@@ -12,8 +12,8 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("container").innerHTML = '&nbsp;';
-                document.getElementById("container").innerHTML = '<canvas id="related"></canvas><canvas id="rising"></canvas><div id="clear"></div>';
+                document.getElementById("graph_container").innerHTML = '&nbsp;';
+                document.getElementById("graph_container").innerHTML = '<canvas id="related"></canvas><canvas id="rising"></canvas><div id="clear"></div>';
                 formatDataForChart(this.responseText, EorK);
 
             }

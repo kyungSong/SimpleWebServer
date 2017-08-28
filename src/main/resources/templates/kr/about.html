@@ -3,26 +3,21 @@
 <head>
     <title>OtD: 페이지 설명</title>
     <meta charset="UTF-8" />
+    <link rel="icon" href="..\assets\images\favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"></link>
+    <link rel="stylesheet" href="..\assets\bootstrap\css\bootstrap.min.css" />
+    <link rel="stylesheet" href="..\assets\tether\tether.min.css" />
+    <link rel="stylesheet" href="..\assets\bootstrap\css\bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="..\assets\bootstrap\css\bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="..\assets\socicon\css\styles.css" />
+    <link rel="stylesheet" href="..\assets\dropdown\css\style.css" />
+    <link rel="stylesheet" href="..\assets\theme\css\style.css" />
+    <link rel="stylesheet" href="..\assets\mobirise\css\mbr-additional.css" type="text/css" />
 <style>
     body {
       /*padding-top: 20px;*/
       padding-bottom: 20px;
     }
-
-    .navbar {
-      margin-bottom: 20px;
-    }
-    .main {
-      padding: 16px;
-      margin-top: 30px;
-    }
-
-    .main_en {
-        padding: 16px;
-        margin-top: 60px;
-        }
 
     .tab{margin-left: 40px;}
 
@@ -35,71 +30,244 @@
 </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<section class="menu cid-qtsbe3K7da" id="menu1-g" data-rv-view="12">
+    <nav class="navbar navbar-expand navbar-dark bg-dark navbar-fixed-top navbar-dropdown navbar-toggleable-sm">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="/">
+                         <img src="..\assets\images\logo.png" style="height: 3rem;" />
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap">
+                    <a class="navbar-caption text-white display-4" href="/">
+                        OtD
+                    </a>
+                </span>
+            </div>
+        </div>
 
-    <div class="collapse navbar-collapse justify-content-md-center" id="nav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">OtD <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/kr/about.html">페이지 설명</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/kr/contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">데이터</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown">
-                    <a class="dropdown-item" href="/kr/text_analysis.html">텍스트 분석</a>
-                    <a class="dropdown-item" href="/kr/trending.html">연관 검색어</a>
-                    <a class="dropdown-item disabled" href="#">개발중</a>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <li class="nav-item">
+                    <a class="nav-link link display-4" href="/kr/about.html">페이지 설명</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link display-4" href="/kr/contact.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown open">
+                    <a class="nav-link link text-white dropdown-toggle display-4" href="" data-toggle="dropdown-submenu" aria-expanded="true">
+                        데이터
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="text-white dropdown-item display-4" href="/kr/text_analysis" aria-expanded="false">텍스트 분석</a>
+                        <a class="text-white dropdown-item display-4" href="/kr/trending" aria-expanded="false">연관 검색어</a>
+                        <a class="text-white dropdown-item display-4" href="#" aria-expanded="false">개발중</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="/en/about">English</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<section class="cid-qtsbe4jbMt mbr-fullscreen mbr-parallax-background" id="header2-e" data-rv-view="14">
+
+
+
+
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="radio-group" data-toggle="buttons">
+                <label class="btn btn-md btn-secondary display-4 active" onclick="showServer();">
+                    <input type="radio" id="server-btn" autocomplete="off" checked=""/>
+                    서버
+                </label>
+                <label class="btn btn-md btn-secondary display-4" onclick="showClient();">
+                    <input type="radio" id="client-btn" autocomplete="off"/>
+                    클라이언트
+                </label>
+            </div>
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1-outline">
+                    텍스트 분석
+                </h1>
+                <div id="server-div" class="target-divs">
+                    <p class="mbr-text pb-3 mbr-fonts-style display-5-outline">
+                        1. 매일 정해진 시간에 정해진 게임에 대한 포스팅 내용 수집.<br />
+                        2. 텍스트 상에서 사용된 명사를 추출하여 각 명사가 언급된 횟수 저장.<br />
+                    </p>
                 </div>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav ml-auto justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link" href="/en/about" role="button">En</a>
-            </li>
-        </ul>
+                <div id="client-div" class="target-divs" style="display: none;">
+                    <p class="mbr-text pb-3 mbr-fonts-style display-5-outline">
+                        1. 게임 이름과 기간을 정한 뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br />
+                        2. 받은 데이터중 상위 25개의 단어를 막대 그래프로 만들어 게시. <br />
+                    </p>
+                </div>
+                <div class="mbr-section-btn justify-content-md-center">
+                    <a class="btn btn-md btn-secondary display-4-outline" href="/kr/text_analysis.html">사용 해보기</a>
+                </div>
+                <p class="mbr-text pb-2 mbr-fonts-style display-4-outline align-center">
+                    데이터 채집은 매일 1회 이루어 집니다. <br />
+                    현재 채집되고 있는 게임: 리니지m, 소녀전선. <br />
+                    계속 업데이트 예정.
+                </p>
+            </div>
+        </div>
     </div>
-</nav>
-    <div class="main">
-        <p>
-            <h1>텍스트 분석:</h1>
-        </p>
-        <p>
-        텍스트 분석은 다음과 같이 이루어집니다. <br></br>
-            <span>
-                &lt; 서버측 &gt; <br></br><br></br>
-                1. 매일 정해진 시간에 정해진 게임에 대한 데이터 수집.<br></br>
-                2. 텍스트 상에서 사용된 명사를 추출하여 각 명사가 언급된 횟수 저장.<br></br><br></br>
-                &lt; 클라이언트(브라우저) 측 &gt; <br></br><br></br>
-                1. 게임 이름과 기간을 정한 뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br></br>
-                2. 받은 데이터중 상위 25개의 단어를 표 형식으로 만들어 브라우저 상에 게시. <br></br><br></br>
-            </span>
-            데이터 채집은 매일 1회 이루어 집니다. <br></br>
-            현재 채집되고 있는 게임: 리니지m, 소녀전선. <br></br>
-            계속 업데이트 예정.
-        </p>
-        <p>
-            <h1>연관 검색어:</h1>
-        </p>
-        <p>
-            연관 검색어는 다음과 같이 이루어집니다. <br></br><br></br>
-            <span>
-                1. 검색어와 기간을 정한뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br></br>
-                2. 입력된 기간 내에, 입력된 검색어와 연관있었던 검색어와, 역시 해당 기간내에 해당 검색어와 연관되어 가장 많이 검색 빈도율이 올라간 검색어를 표 형식으로 만들어 브라우저 상에 게시. <br></br><br></br>
-            </span>
-            연관 검색어 검색은 구글 트렌드를 사용하고 있으며, 지역은 한국으로 제한되어 있습니다. 기간이 길면 로딩이 길어질 수 있습니다. <br></br>
-            계속 업데이트 예정.
-        </p>
+</section>
+<section class="cid-qtsc5wJXJu mbr-fullscreen mbr-parallax-background" id="header3-e" data-rv-view="14">
+
+
+
+
+
+    <div class="container align-center">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1-outline">
+                    연관 검색어
+                </h1>
+                <div id="trend-div">
+                    <p class="mbr-text pb-3 mbr-fonts-style display-5-outline">
+                        <span>
+                            1. 지정 검색어와 기간을 정한뒤 제출 버튼을 누르면 서버측에 데이터 요청. <br />
+                            2. 해당 기간동안 지정 검색어와 관련되었던 연관 검색어 바 그래프로 게시. <br />
+                            3. 해당 기간동안 지정 검색어와 관련되어 검색 빈도율이 높아진 검색어 바 그래프로 게시.<br />
+                        </span>
+                    </p>
+                </div>
+                <div class="mbr-section-btn justify-content-md-center">
+                    <a class="btn btn-md btn-secondary display-4-outline" href="/kr/trending.html">사용 해보기</a>
+                </div>
+                <p class="mbr-text pb-2 mbr-fonts-style display-4-outline align-center">
+                    연관 검색어 검색은 구글 트렌드를 사용하고 있으며, 지역은 한국으로 제한되어 있습니다. <br />
+                    검색 기간이 길면 로딩이 길어질 수 있습니다. <br />
+                    계속 업데이트 예정.
+                </p>
+            </div>
+        </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</section>
+<section class="cid-qtsbe4F22N" id="footer1-f" data-rv-view="17">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row content text-white">
+            <div class="col-12 col-md-3">
+                <div class="media-wrap">
+                    <a href="/">
+                        <img src="..\assets\images\logo.png" alt="OtD"/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Observe that Data
+                </h5>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Contacts
+                </h5>
+                <p class="mbr-text">
+                    Email: uranos02+otd@gmail.com
+                </p>
+            </div>
+            <div class="col-12 col-md-3 mbr-fonts-style display-7">
+                <h5 class="pb-3">
+                    Links
+                </h5>
+                <p class="mbr-text">
+                    <a class="text-primary" href="/kr/contact">Author Info</a>
+                    <br /><a class="text-primary" href="/kr/text_analysis">Text Analysis</a>
+                    <br /><a class="text-primary" href="/kr/trending">Trending Words</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr />
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        Built Using Templates Provided by Mobirise <br />
+                        Icon Made by Freepik from www.flaticon.com
+                    </p>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="social-list align-right" style="display: none;">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social" ></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social" ></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/mobirise" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social" ></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social" ></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social" ></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <script src="..\assets\web\assets\jquery\jquery.min.js"></script>
+    <script src="..\assets\popper\popper.min.js"></script>
+    <script src="..\assets\bootstrap\js\bootstrap.min.js"></script>
+    <script src="..\assets\tether\tether.min.js"></script>
+    <script src="..\assets\dropdown\js\script.min.js"></script>
+    <script src="..\assets\touch-swipe\jquery.touch-swipe.min.js"></script>
+    <script src="..\assets\jarallax\jarallax.min.js"></script>
+    <script src="..\assets\smooth-scroll\smooth-scroll.js"></script>
+    <script src="..\assets\theme\js\script.js"></script>
+    <script>
+        function showServer()
+        {
+            console.log("working?");
+            document.getElementById("client-div").style.display = 'none';
+            document.getElementById("server-div").style.display = 'block';
+        }
+        function showClient()
+        {
+            document.getElementById("server-div").style.display = 'none';
+            document.getElementById("client-div").style.display = 'block';
+
+        }
+    </script>
 </body>
 </html>

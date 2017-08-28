@@ -2,6 +2,7 @@ package website;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * Created by Kyung Song on 6/28/2017.
