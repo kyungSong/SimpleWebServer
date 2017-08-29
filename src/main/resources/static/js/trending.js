@@ -2,6 +2,9 @@
     // run google trends API
     function runGoogleTrends()
     {
+        if (document.getElementById("searchParam").elements[3].checked) {
+            return false;
+        }
         var params = {
             searchTerm : '"' + document.getElementById("searchParam").elements[0].value + '"',
             startDate : document.getElementById("searchParam").elements[1].value,

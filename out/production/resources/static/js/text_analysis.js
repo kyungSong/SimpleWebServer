@@ -2,6 +2,9 @@
         // get Text analysis data from DB
         function getTextAnalysis()
         {
+            if (document.getElementById("searchParam").elements[3].checked) {
+                return false;
+            }
             var params = {
                 gameName : '"' + document.getElementById("searchParam").elements[0].value + '"',
                 startDate : document.getElementById("searchParam").elements[1].value,
