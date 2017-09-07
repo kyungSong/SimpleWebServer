@@ -2,19 +2,23 @@
     // run google trends API
     function runGoogleTrends()
     {
+        // bot check. If invisible check box (4th element of search param) is checked, do not request to the server.
         if (document.getElementById("searchParam").elements[3].checked) {
             return false;
         }
+        // make parameters into javascript object to send it to the controller
         var params = {
             searchTerm : '"' + document.getElementById("searchParam").elements[0].value + '"',
             startDate : document.getElementById("searchParam").elements[1].value,
             endDate : document.getElementById("searchParam").elements[2].value
         }
         var url = "..\\google_trends" + formatParams(params);
+        //check if search word was in English or Korean.
         var EorK = isEnglish(document.getElementById("searchParam").elements[0].value);
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                //clear the canvas
                 document.getElementById("graph_container").innerHTML = '&nbsp;';
                 document.getElementById("graph_container").innerHTML = '<canvas id="related"></canvas><canvas id="rising"></canvas><div id="clear"></div>';
                 formatDataForChart(this.responseText, EorK);
@@ -29,11 +33,13 @@
     //format related queries data received from runGoogleTrends function.
     function formatDataForChart(data, EorK)
     {
+        //split received data into two different data. Split token 'splitHereForText' was added on the server side.
         var splitData = data.split("splitHereForList");
         splitData[0] = JSON.parse(splitData[0]);
         splitData[1] = JSON.parse(splitData[1]);
 
         var chartData = [];
+        //turn received data into what chart.js can use.
         for (var key in splitData)
         {
             if (splitData.hasOwnProperty(key))
@@ -60,6 +66,7 @@
         var relatedChartTitle;
         var risingChartTitle;
 
+        //if search word was in English, legends and title should be in English, else in Korean.
         if (EorK)
         {
             relatedChartTitle = "Users who searched the term " + '"' + document.getElementById("searchParam").elements[0].value + '"' + " also searched: ";
@@ -74,6 +81,7 @@
 
         var ctxRelated = document.getElementById("related").getContext('2d');
         ctxRelated.canvas.width = window.innerWidth;
+        //height - 100 for displaying the graph without scroll.
         ctxRelated.canvas.height = window.innerHeight - 100;
 
         var ctxRising = document.getElementById("rising").getContext('2d');
@@ -189,6 +197,7 @@
         today = yyyy + '-' + mm + '-' + dd;
         lastYear = yyyy-1 + '-' + mm + '-' + dd;
 
+        //set default and current values for date input.
         document.getElementById("startDate").setAttribute("max", today);
         document.getElementById("startDate").setAttribute("value", lastYear);
 
